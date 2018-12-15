@@ -7,14 +7,28 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>mule</packaging> 
 	<name>Mule maven10 Application</name>
+	
 
     <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
+		<build.number>1.0</build.number>
 		<mule.version>3.9.0</mule.version>
     	<mule.tools.version>1.2</mule.tools.version>
 	</properties>
+	
+	
+	
+		<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>file:///D:/Mule/maven-remote/</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh2</id>
+			<url>file:///D:/Mule/maven-remote2/</url>
+		</repository>
+	</distributionManagement>
 
 	<build>
 	<finalName>${artifactId}-${version}-b${build.number}</finalName>
@@ -102,6 +116,8 @@
 							<applicationName>${artifactId}</applicationName>
 							<environment>anpdev</environment>
 							<uri>https://anypoint.mulesoft.com</uri>
+							<workerType>MICRO</workerType>
+							<workers>1</workers>
 						</configuration>
 						<executions>
 							<execution>
@@ -132,6 +148,8 @@
 							<applicationName>${artifactId}</applicationName>
 							<environment>anpqa</environment>
 							<uri>https://anypoint.mulesoft.com</uri>
+							<workerType>MICRO</workerType>
+							<workers>1</workers>
 						</configuration>
 						<executions>
 							<execution>
@@ -162,6 +180,8 @@
 							<applicationName>${artifactId}</applicationName>
 							<environment>anpprd</environment>
 							<uri>https://anypoint.mulesoft.com</uri>
+							<workerType>MICRO</workerType>
+							<workers>1</workers>
 						</configuration>
 						<executions>
 							<execution>
