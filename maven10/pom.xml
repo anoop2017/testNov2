@@ -15,7 +15,9 @@
 		<build.number>1.0</build.number>
 		<mule.version>3.9.0</mule.version>
     	<mule.tools.version>1.2</mule.tools.version>
-	</properties>
+	<munit.version>1.3.8</munit.version>
+    <mule.munit.support.version>3.9.1</mule.munit.support.version>
+    </properties>
 	
 	
 	
@@ -98,8 +100,38 @@
 				  <artifactId>mule-maven-plugin</artifactId>
 				  <version>2.2.1</version>
 			</plugin>
-		</plugins>
-	</build>
+		<plugin>
+                <groupId>com.mulesoft.munit.tools</groupId>
+                <artifactId>munit-maven-plugin</artifactId>
+                <version>${munit.version}</version>
+                <executions>
+                    <execution>
+                        <id>test</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <coverage>
+                        <runCoverage>true</runCoverage>
+                        <formats>
+                            <format>html</format>
+                        </formats>
+                    </coverage>
+                </configuration>
+            </plugin>
+        </plugins>
+	<testResources>
+            <testResource>
+                <directory>src/test/munit</directory>
+            </testResource>
+        <testResource>
+                <directory>src/test/resources</directory>
+            </testResource>
+        </testResources>
+    </build>
 <profiles>
 	<profile>
 		<id>cloudhub-dev</id>
@@ -113,7 +145,7 @@
 							<muleVersion>${mule.version}</muleVersion>
 							<username>anoopkkdev2</username>
 							<password>Ethan@2011</password>
-							<applicationName>${artifactId}</applicationName>
+							<applicationName>${artifactId}-dev</applicationName>
 							<environment>anpdev</environment>
 							<uri>https://anypoint.mulesoft.com</uri>
 							<workerType>MICRO</workerType>
@@ -145,7 +177,7 @@
 							<muleVersion>${mule.version}</muleVersion>
 							<username>anoopkkdev2</username>
 							<password>Ethan@2011</password>
-							<applicationName>${artifactId}</applicationName>
+							<applicationName>${artifactId}-qa</applicationName>
 							<environment>anpqa</environment>
 							<uri>https://anypoint.mulesoft.com</uri>
 							<workerType>MICRO</workerType>
@@ -177,8 +209,8 @@
 							<muleVersion>${mule.version}</muleVersion>
 							<username>anoopkkdev2</username>
 							<password>Ethan@2011</password>
-							<applicationName>${artifactId}</applicationName>
-							<environment>anpprd</environment>
+							<applicationName>${artifactId}-prd</applicationName>
+							<environment>anpprod</environment>
 							<uri>https://anypoint.mulesoft.com</uri>
 							<workerType>MICRO</workerType>
 							<workers>1</workers>
@@ -315,6 +347,18 @@
             <artifactId>mule-module-spring-config</artifactId>
             <version>${mule.version}</version>
             <scope>provided</scope>
+        </dependency>
+    <dependency>
+            <groupId>com.mulesoft.munit</groupId>
+            <artifactId>mule-munit-support</artifactId>
+            <version>${mule.munit.support.version}</version>
+            <scope>test</scope>
+        </dependency>
+    <dependency>
+            <groupId>com.mulesoft.munit</groupId>
+            <artifactId>munit-runner</artifactId>
+            <version>${munit.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
