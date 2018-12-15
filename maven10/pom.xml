@@ -134,7 +134,7 @@
     </build>
 <profiles>
 	<profile>
-		<id>cloudhub-qa</id>
+		<id>cloudhub-dev</id>
 			<build>
 				<plugins>
 					<plugin>
@@ -166,7 +166,7 @@
 		</profile>
 		
 			<profile>
-		<id>cloudhub-dev</id>
+		<id>cloudhub-qa</id>
 			<build>
 				<plugins>
 					<plugin>
