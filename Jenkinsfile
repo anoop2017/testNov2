@@ -1,6 +1,9 @@
-pipeline {
-  agent any
-  stages {
+node {
+  
+  stage('SCM Checkout')
+  {
+    git 'https://github.com/anoop2017/testNov2/maven10'
+  }
     stage('Unit Test') { 
       steps {
         sh 'mvn clean test'
@@ -21,5 +24,5 @@ pipeline {
         sh 'mvn deploy -P cloudhub-prod'
       }
     }
-  }
+  
 }
