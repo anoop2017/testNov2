@@ -2,7 +2,7 @@ node {
   
   stage('SCM Checkout')
   {
-    git 'https://github.com/anoop2017/testNov2/maven10'
+    git 'https://github.com/anoop2017/testNov2'
   }
     stage('Unit Test') { 
       steps {
