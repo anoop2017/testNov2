@@ -8,7 +8,7 @@ node {
     def mvnHome = tool name: 'D:\\Mule\\Maven\\apache-maven-3.5.4-bin\\apache-maven-3.5.4', type: 'maven'
     def mavenHome = 'D:\\Mule\\Maven\\apache-maven-3.5.4-bin\\apache-maven-3.5.4'
     echo 'this is my unit testing'
-    sh 'mvn package'
+    sh 'mvn -version'
   }
 
 }
