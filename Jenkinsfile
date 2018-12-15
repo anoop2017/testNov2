@@ -6,8 +6,9 @@ node {
   }
   stage('UNIT test'){
     def mvnHome = tool name: 'D:\\Mule\\Maven\\apache-maven-3.5.4-bin\\apache-maven-3.5.4', type: 'maven'
+    def mavenHome = 'D:\\Mule\\Maven\\apache-maven-3.5.4-bin\\apache-maven-3.5.4'
     echo 'this is my unit testing'
-    sh "${mvnHome}/bin/mvn package"
+    sh "${mavenHome}/bin/mvn package"
   }
 
 }
