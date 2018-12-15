@@ -10,9 +10,7 @@ node {
    "${mvnHome}/bin/mvn deploy -P cloudhub-dev"
   }
   stage('Test') {
-	steps {
 		input('Do you want to proceed to deploy it to QA?')
-	}
 	}
 	stage('Deploy QA'){
     def mvnHome = tool name: 'D:\\Mule\\Maven\\apache-maven-3.5.4-bin\\apache-maven-3.5.4', type: 'maven'
@@ -22,9 +20,7 @@ node {
     }
   }
     stage('Production') {
-	steps {
 		input('Do you want to proceed to deploy this to Prod?')
-	}
 	}
 	stage('Deploy PROD'){
     def mvnHome = tool name: 'D:\\Mule\\Maven\\apache-maven-3.5.4-bin\\apache-maven-3.5.4', type: 'maven'
