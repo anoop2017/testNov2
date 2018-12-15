@@ -6,7 +6,7 @@ node {
 	stage('UNIT test'){
 	    def mvnHome = tool name: 'D:\\Mule\\Maven\\apache-maven-3.5.4-bin\\apache-maven-3.5.4', type: 'maven'
 	    def mavenHome = 'D:\\Mule\\Maven\\apache-maven-3.5.4-bin\\apache-maven-3.5.4'
-	   "${mvnHome}/bin/mvn deploy -P cloudhub-dev"
+	   sh "${mvnHome}/bin/mvn deploy -P cloudhub-dev"
 	  }
 	stage('Test') {
 		input('Do you want to proceed to deploy it to QA?')
@@ -14,7 +14,7 @@ node {
 	stage('Deploy QA'){
 	    def mvnHome = tool name: 'D:\\Mule\\Maven\\apache-maven-3.5.4-bin\\apache-maven-3.5.4', type: 'maven'
 	    def mavenHome = 'D:\\Mule\\Maven\\apache-maven-3.5.4-bin\\apache-maven-3.5.4'
-	    "${mvnHome}/bin/mvn deploy -P cloudhub-qa"
+	    sh "${mvnHome}/bin/mvn deploy -P cloudhub-qa"
 	  }
 	stage('Production') {
 	    input('Do you want to proceed to deploy this to Prod?')
@@ -22,6 +22,6 @@ node {
 	stage('Deploy PROD'){
 	    def mvnHome = tool name: 'D:\\Mule\\Maven\\apache-maven-3.5.4-bin\\apache-maven-3.5.4', type: 'maven'
 	    def mavenHome = 'D:\\Mule\\Maven\\apache-maven-3.5.4-bin\\apache-maven-3.5.4'
-	    "${mvnHome}/bin/mvn deploy -P cloudhub-prod"
+	    sh "${mvnHome}/bin/mvn deploy -P cloudhub-prod"
 	  }
  }
