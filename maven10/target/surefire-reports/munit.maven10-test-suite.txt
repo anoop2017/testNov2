@@ -1,5 +1,5 @@
 SUCCESS - Test maven10-test-suite-maven10FlowTest finished Successfully.
 
 =============================================================================
-Tests run: 1 - Failures: 0 - Errors: 0 - Skipped: 0 - Time elapsed: 0.549 sec
+Tests run: 1 - Failures: 0 - Errors: 0 - Skipped: 0 - Time elapsed: 0.648 sec
 =============================================================================

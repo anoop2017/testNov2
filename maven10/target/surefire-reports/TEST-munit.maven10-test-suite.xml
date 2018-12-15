@@ -1,4 +1,4 @@
-<testsuite name="maven10-test-suite" time="0.549" failures="0" errors="0" skipped="0" tests="1">
+<testsuite name="maven10-test-suite" time="0.648" failures="0" errors="0" skipped="0" tests="1">
   <properties>
     <property key="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property key="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_101\jre\bin"/>
@@ -42,7 +42,7 @@
     <property key="java.class.path" value="D:\Mule\Maven\apache-maven-3.5.4-bin\apache-maven-3.5.4\bin\..\boot\plexus-classworlds-2.5.2.jar"/>
     <property key="user.name" value="anoop"/>
     <property key="java.vm.specification.version" value="1.8"/>
-    <property key="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B clean deploy -P cloudhub-dev"/>
+    <property key="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B clean deploy -P cloudhub-qa"/>
     <property key="java.home" value="C:\Program Files\Java\jdk1.8.0_101\jre"/>
     <property key="sun.arch.data.model" value="64"/>
     <property key="user.language" value="en"/>
@@ -63,5 +63,5 @@
     <property key="mule.testingMode" value="true"/>
     <property key="mule.working.dir" value="C:\Users\anoop\git\testNov2\maven10\target\.mule"/>
   </properties>
-  <testcase time="0.119" name="maven10-test-suite-maven10FlowTest" classname="maven10-test-suite"/>
+  <testcase time="0.173" name="maven10-test-suite-maven10FlowTest" classname="maven10-test-suite"/>
 </testsuite>

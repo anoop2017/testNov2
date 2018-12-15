@@ -134,7 +134,7 @@
     </build>
 <profiles>
 	<profile>
-		<id>cloudhub-dev</id>
+		<id>cloudhub-qa</id>
 			<build>
 				<plugins>
 					<plugin>
@@ -146,7 +146,7 @@
 							<username>anoopkkdev2</username>
 							<password>Ethan@2011</password>
 							<applicationName>${artifactId}-dev</applicationName>
-							<environment>anpdev</environment>
+							<environment>anpqa</environment>
 							<uri>https://anypoint.mulesoft.com</uri>
 							<workerType>MICRO</workerType>
 							<workers>1</workers>
@@ -166,7 +166,7 @@
 		</profile>
 		
 			<profile>
-		<id>cloudhub-qa</id>
+		<id>cloudhub-dev</id>
 			<build>
 				<plugins>
 					<plugin>
@@ -178,7 +178,7 @@
 							<username>anoopkkdev2</username>
 							<password>Ethan@2011</password>
 							<applicationName>${artifactId}-qa</applicationName>
-							<environment>anpqa</environment>
+							<environment>anpdev</environment>
 							<uri>https://anypoint.mulesoft.com</uri>
 							<workerType>MICRO</workerType>
 							<workers>1</workers>
