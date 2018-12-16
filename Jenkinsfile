@@ -9,7 +9,6 @@ pipeline {
 				}
 			}
 		stage('UNIT test'){
-			def mvnHome = tool name: 'D:\\Mule\\Maven\\apache-maven-3.5.4-bin\\apache-maven-3.5.4', type: 'maven'
 			steps {
 			  "mvn deploy -P cloudhub-dev"
 			}
@@ -19,8 +18,7 @@ pipeline {
 				input('Do you want to proceed to deploy it to QA?')
 			}
 			}
-			stage('Deploy QA'){
-			def mvnHome = tool name: 'D:\\Mule\\Maven\\apache-maven-3.5.4-bin\\apache-maven-3.5.4', type: 'maven'
+		stage('Deploy QA'){
 			steps {
 			  "mvn deploy -P cloudhub-qa"
 			}
@@ -32,7 +30,6 @@ pipeline {
 			}
 		stage('Deploy PROD')
 		{
-			def mvnHome = tool name: 'D:\\Mule\\Maven\\apache-maven-3.5.4-bin\\apache-maven-3.5.4', type: 'maven'
 			steps {
 			  "mvn deploy -P cloudhub-prod"
 			}
