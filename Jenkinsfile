@@ -6,6 +6,6 @@ node {
 	stage('UNIT test'){
 	    def mvnHome = tool name: 'D:\\Mule\\Maven\\apache-maven-3.5.4-bin\\apache-maven-3.5.4', type: 'maven'
 	    def mavenHome = 'D:\\Mule\\Maven\\apache-maven-3.5.4-bin\\apache-maven-3.5.4'
-	    sh "'${mvnHome}/bin/mvn' deploy -P cloudhub-dev"
+	    sh "${mvnHome}/bin/mvn deploy -P cloudhub-dev"
 	  }
  }
