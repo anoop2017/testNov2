@@ -9,6 +9,6 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
     </spring:beans>
     <munit:test name="maven10-test-suite-maven10FlowTest" description="Test">
         <flow-ref name="maven10Flow" doc:name="Flow-ref to maven10Flow"/>
-        <munit:assert-payload-equals message="The expected payload is wrong" expectedValue="#['working']" doc:name="Assert Payload"/>
+        <munit:assert-payload-equals message="The expected payload is wrong" expectedValue="#['working 1234']" doc:name="Assert Payload"/>
     </munit:test>
 </mule>
